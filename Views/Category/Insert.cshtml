@@ -1,0 +1,54 @@
+﻿@model Tuple<Category, Image>
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h2>Insert</h2>
+
+@using (Html.BeginForm("Insert", "Category", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>Kategori Adı</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.Item1.CategoryName)
+            </td>
+        </tr>
+        <tr>
+            <td>Açıklama </td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.Item1.Description)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Resim</td>
+            <td>: </td>
+            <td>
+                <input type="file" name="fluResim" />
+            </td>
+
+        </tr>
+        <tr>
+            <td>Görsel Açıklaması</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.Item2.Description)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>Kaydet</button>
+            </td>
+        </tr>
+    </table>
+
+}
+
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}

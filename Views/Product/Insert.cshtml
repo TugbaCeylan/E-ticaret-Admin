@@ -1,0 +1,86 @@
+﻿@model Product
+
+@{
+    ViewBag.Title = "Insert";
+}
+
+
+@using (Html.BeginForm("Insert", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>Ürün Adı</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.ProductName)
+            </td>
+        </tr>
+        <tr>
+            <td>Kategorisi</td>
+            <td>: </td>
+            <td>
+                @Html.DropDownList("CategoryID", String.Empty)
+            </td>
+        </tr>
+        <tr>
+            <td>Markası</td>
+            <td>: </td>
+            <td>
+                @Html.DropDownList("BrandID", String.Empty)
+            </td>
+        </tr>
+        <tr>
+            <td>Birim Fiyat</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.UnitPrice)
+            </td>
+        </tr>
+        <tr>
+            <td>Stok Miktarı</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.UnitsInStock)
+            </td>
+        </tr>
+        <tr>
+            <td>Sipariş Miktarı</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.UnitsOnOrder)
+            </td>
+        </tr>
+        <tr>
+            <td>Yeniden Sipariş Noktası</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.ReorderLevel)
+            </td>
+        </tr>
+        <tr>
+            <td>Açıklama</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.Description)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Resimler</td>
+            <td>: </td>
+            <td>
+                <input type="file" name="fluResim" multiple />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>Kaydet</button>
+            </td>
+        </tr>
+    </table>
+}
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}

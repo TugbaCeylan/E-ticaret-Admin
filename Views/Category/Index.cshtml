@@ -1,0 +1,39 @@
+﻿@model List<Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Yeni Kategori", "Insert", "Category")
+<br /><br />
+
+<table>
+    <tr>
+        <th>Kategori Adı</th>
+        <th>Açıklaması</th>
+        <th>Görsel ID</th>
+        <th>Silindimi</th>
+        <th>Resmi Güncelle</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (Category item in Model)
+    {
+        <tr>
+            <td>@item.CategoryName</td>
+            <td>@item.Description</td>
+            <td>@item.ImageID</td>
+            <td>@item.isDeleted</td>
+            <td>@Html.ActionLink("Resmi Güncelle", "Edit", "Image", new { id = item.ImageID }, null)</td>
+            <td>@Html.ActionLink("Güncelle", "Edit", "Category", new { id = item.CategoryID }, null)</td>
+            <td>@Html.ActionLink("Sil", "Delete", "Category", new { id = item.CategoryID }, null)</td>
+        </tr>
+    }
+</table>
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}
+
+

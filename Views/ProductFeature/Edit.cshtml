@@ -1,0 +1,47 @@
+﻿@model ProductFeature
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "ProductFeature", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.ProductFeatureID)
+    @Html.HiddenFor(model => model.ProductID)
+    @Html.HiddenFor(model => model.isDeleted)
+    <table>
+        <tr>
+            <td>Ürün Adı</td>
+            <td>: </td>
+            <td>
+                @Html.DropDownList("ProductID", String.Empty)
+            </td>
+        </tr>
+        <tr>
+            <td>Özellik Tipi</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.FeatureType)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Özellik Değeri</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.FeatureValue)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>Kaydet</button>
+            </td>
+        </tr>
+    </table>
+}
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}

@@ -1,0 +1,50 @@
+﻿@model Brand
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Brand", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.BrandID)
+    @Html.HiddenFor(model => model.ImageID)
+    <table>
+        <tr>
+            <td>Adı</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.BrandName)
+            </td>
+        </tr>
+        <tr>
+            <td>Açıklama</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.Description)
+            </td>
+        </tr>
+        @*<tr>
+                <td>Silindimi</td>
+                <td>: </td>
+                <td>
+                    @Html.CheckBoxFor(model => model.isDeleted)
+                </td>
+            </tr>*@
+        <tr>
+            <td colspan="3">
+                <button>Güncelle</button>
+            </td>
+        </tr>
+    </table>
+}
+
+@if (TempData["Message"] != null)
+{
+    <div style="background-color: #2882a9; color: white; padding: 7px 15px; margin-top:15px;">
+        @TempData["Message"]
+    </div>
+}
+
+
+

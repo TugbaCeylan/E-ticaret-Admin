@@ -1,0 +1,43 @@
+﻿@model List<Brand>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Yeni Marka", "Insert", "Brand")
+<br /><br />
+
+<table>
+    <tr>
+        <th>Marka Adı</th>
+        <th>Açıklaması</th>
+        <th>Görsel ID</th>
+        <th>Silindimi</th>
+        <th>Resmi Güncelle</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (Brand item in Model)
+    {
+        <tr>
+            <td>@item.BrandName</td>
+            <td>@item.Description</td>
+            <td>@item.ImageID</td>
+            <td>@item.isDeleted</td>
+            <td>@Html.ActionLink("Resmi Güncelle", "Edit", "Image", new { id = item.ImageID }, null)</td>
+            <td>@Html.ActionLink("Güncelle", "Edit", "Brand", new { id = item.BrandID }, null)</td>
+            <td>@Html.ActionLink("Sil", "Delete", "Brand", new { id = item.BrandID }, null)</td>
+        </tr>
+    }
+</table>
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}
+
+
+
+
+
+

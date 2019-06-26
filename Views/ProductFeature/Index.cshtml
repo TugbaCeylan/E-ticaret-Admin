@@ -1,0 +1,37 @@
+﻿@model List<ProductFeature>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@Html.ActionLink("Yeni Ürün Özelliği", "Insert", "ProductFeature")
+<br /><br />
+
+<table>
+    <tr>
+        <th>Ürün Adı</th>
+        <th>Ürün Özellik Tipi</th>
+        <th>Ürün Özellik Değeri</th>
+        <th>Silindi mi</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (ProductFeature item in Model)
+    {
+        <tr>
+            <td>@item.Product.ProductName</td>
+            <td>@item.FeatureType</td>
+            <td>@item.FeatureValue</td>
+            <td>@item.isDeleted</td>
+            <td>@Html.ActionLink("Güncelle", "Edit", "ProductFeature", new { id = item.ProductFeatureID }, null)</td>
+            <td>@Html.ActionLink("Sil", "Delete", "ProductFeature", new { id = item.ProductFeatureID }, null )</td>
+        </tr>
+    }
+</table>
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}

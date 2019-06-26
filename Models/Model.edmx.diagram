@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11ad1aef81dd408e96f7d3f85e4fa920" Name="Diagram1">
+        <EntityTypeShape EntityType="TDesignModel.Address" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Brand" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Category" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Image" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Membership" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.OrderDetail" Width="1.5" PointX="7.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Order" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.OrderStatu" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.ProductFeature" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.ProductImage" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Product" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Role" Width="1.5" PointX="0.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.Shipper" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.UserAddress" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TDesignModel.User" Width="1.5" PointX="3" PointY="17.125" IsExpanded="true" />
+        <AssociationConnector Association="TDesignModel.FK_Orders_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Shippers_Addresses" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Brands_Images" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Products_Brands" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Categories_Images" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Products_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_OrderDetails_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_OrderDetails_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Orders_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_ProductFeatures_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_ProductImages_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="TDesignModel.FK_UserAddresses_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

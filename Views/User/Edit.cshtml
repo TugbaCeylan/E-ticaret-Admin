@@ -1,0 +1,113 @@
+﻿@model User
+@{
+    ViewBag.Title = "Insert";
+}
+
+
+
+@using (Html.BeginForm("Edit", "User", FormMethod.Post))
+{
+    @Html.HiddenFor(Model => Model.UserID)
+    @Html.HiddenFor(Model => Model.CreateDate)
+
+    {
+        <table>
+            <tr>
+                <td>Ad:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td>Soyad:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.LastName)
+                </td>
+            </tr>
+            <tr>
+                <td>Kullanıcı Adı:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.UserName)
+                </td>
+            </tr>
+            <tr>
+                <td>E-Mail:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>Şİfre:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>Gizli Soru:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.PasswordQuestion)
+                </td>
+            </tr>
+            <tr>
+                <td>Cevabı:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.PaswordAnswer)
+                </td>
+            </tr>
+            <tr>
+                <td>CSM:</td>
+                <td>: </td>
+                <td>
+                    @Html.TextBoxFor(model => model.PhoneNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>Rol</td>
+                <td>: </td>
+                <td>
+                    @Html.DropDownList("RoleID", String.Empty)
+                </td>
+            </tr>
+            <tr>
+                <td>Silindi mi:</td>
+                <td>: </td>
+                <td>
+                    @Html.EditorFor(model => model.IsDeleted)
+                </td>
+            </tr>
+            <tr>
+                <td>Onaylı mı:</td>
+                <td>: </td>
+                <td>
+                    @Html.EditorFor(model => model.IsAprowed)
+                </td>
+            </tr>
+            <tr>
+                <td>Engelli mi:</td>
+                <td>: </td>
+                <td>
+                    @Html.EditorFor(model => model.IsLockedOut)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <button>Kaydet</button>
+                </td>
+            </tr>
+        </table>
+    }
+}
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}
+
+

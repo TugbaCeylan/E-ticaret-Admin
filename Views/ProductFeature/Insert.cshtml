@@ -1,0 +1,44 @@
+﻿@model ProductFeature
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h2>Insert</h2>
+
+@using (Html.BeginForm("Insert", "ProductFeature", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>Ürün Adı</td>
+            <td>: </td>
+            <td>
+                @Html.DropDownList("ProductID", String.Empty)
+            </td>
+        </tr>
+        <tr>
+            <td>Özellik Tipi</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.FeatureType)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Özellik Değeri</td>
+            <td>: </td>
+            <td>
+                @Html.TextBoxFor(model => model.FeatureValue)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button>Kaydet</button>
+            </td>
+        </tr>
+    </table>
+}
+
+@if (TempData["Message"] != null)
+{
+    @TempData["Message"]
+}
